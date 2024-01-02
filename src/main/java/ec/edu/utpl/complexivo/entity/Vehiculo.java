@@ -12,7 +12,6 @@ public class Vehiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_vehichulo")
     private Integer idVehichulo;
-    //private Integer modelo;
     @Column(name = "id_dependencia")
     private String idDependencia;
     private String placa;
