@@ -18,9 +18,12 @@ public class Dependencia {
     @Column(name = "numero_dependencia")
     private Integer numeroDependencia;
     @Column(name = "parent_dependencia")
-    private Integer parentDependencia;
+    private String parentDependencia;
     @ManyToOne
     @JoinColumn(name = "id_localidad", referencedColumnName = "id_localidad")
     private Localidad localidad;
+    @ManyToOne
+    @JoinColumn(name = "parent_dependencia", referencedColumnName = "id_dependencia", insertable = false, updatable = false)
+    private Dependencia dependencia;
 
 }
