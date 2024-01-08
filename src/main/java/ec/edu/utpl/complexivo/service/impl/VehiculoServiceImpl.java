@@ -30,4 +30,13 @@ public class VehiculoServiceImpl implements VehiculoService {
     public Page<Vehiculo> getAllVehiculo(Integer page, Integer size) {
         return vehiculoRepository.findAll(PageRequest.of(page, size));
     }
+
+    public void saveAll(List<Vehiculo> vehiculos) {
+        vehiculoRepository.saveAll(vehiculos);
+    }
+
+    @Override
+    public List<Vehiculo> findByIdDependencia(String idDependencia) {
+        return vehiculoRepository.findByIdDependencia(idDependencia);
+    }
 }

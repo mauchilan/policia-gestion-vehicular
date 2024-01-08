@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/vehiculo")
 public class VehiculoApi {
@@ -30,6 +32,17 @@ public class VehiculoApi {
     public ResponseEntity<Void> deleteVehiculo(@PathVariable Integer id) {
         vehiculoService.deleteVehiculo(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/vincular")
+    public ResponseEntity<Void> saveAll(@RequestBody List<Vehiculo> vehiculos) {
+        vehiculoService.saveAll(vehiculos);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/dependencia/{dependencia}")
+    public ResponseEntity<List<Vehiculo>> findByIdDependenci(@PathVariable String dependencia) {
+        return ResponseEntity.ok(vehiculoService.findByIdDependencia(dependencia));
     }
 
 }
