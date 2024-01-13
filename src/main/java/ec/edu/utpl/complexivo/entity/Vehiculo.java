@@ -39,5 +39,8 @@ public class Vehiculo {
     @ManyToOne
     @JoinColumn(name = "marca", referencedColumnName = "id_catalogo")
     private Catalogo marca;
+    @ManyToOne
+    @JoinColumn(name = "id_dependencia", referencedColumnName = "id_dependencia", insertable = false, updatable = false)
+    private Dependencia dependencia;
 
 }

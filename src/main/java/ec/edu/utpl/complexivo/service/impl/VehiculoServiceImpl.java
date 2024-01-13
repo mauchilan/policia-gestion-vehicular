@@ -23,6 +23,16 @@ public class VehiculoServiceImpl implements VehiculoService {
     }
 
     @Override
+    public Vehiculo readById(Integer idVehiculo) {
+        return vehiculoRepository.findById(idVehiculo).orElse(null);
+    }
+
+    @Override
+    public List<Vehiculo> readByIds(List<Integer> idVehiculos) {
+        return vehiculoRepository.findAllById(idVehiculos);
+    }
+
+    @Override
     public void deleteVehiculo(Integer id) {
         vehiculoRepository.deleteById(id);
     }

@@ -10,6 +10,10 @@ public interface VehiculoService {
 
     void createVehiculo(Vehiculo vehiculo);
 
+    Vehiculo readById(Integer idVehiculo);
+
+    List<Vehiculo> readByIds(List<Integer> idVehiculos);
+
     void deleteVehiculo(Integer id);
 
     Page<Vehiculo> getAllVehiculo(Integer page, Integer size);

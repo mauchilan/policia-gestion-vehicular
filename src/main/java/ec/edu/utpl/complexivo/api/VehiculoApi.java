@@ -22,6 +22,16 @@ public class VehiculoApi {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{idVehiculo}")
+    public ResponseEntity<Vehiculo> readById(@PathVariable Integer idVehiculo) {
+        return ResponseEntity.ok(vehiculoService.readById(idVehiculo));
+    }
+
+    @PostMapping("/vehiculos/read")
+    public ResponseEntity<List<Vehiculo>> readByIds(@RequestBody List<Integer> idVehiculo) {
+        return ResponseEntity.ok(vehiculoService.readByIds(idVehiculo));
+    }
+
     @GetMapping("/vehiculos")
     public ResponseEntity<Page<Vehiculo>> getAllVehiculo(@RequestParam(defaultValue = "0") Integer page,
                                                          @RequestParam(defaultValue = "15") Integer size){
