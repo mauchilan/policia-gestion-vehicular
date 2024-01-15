@@ -16,8 +16,8 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "catalogo")
-@ToString(exclude = {"childs", "cataloParent"})
-@EqualsAndHashCode(exclude = {"childs", "cataloParent"})
+//@ToString(exclude = {"childs", "cataloParent"})
+//@EqualsAndHashCode(exclude = {"childs", "cataloParent"})
 public class Catalogo {
 
     @Id

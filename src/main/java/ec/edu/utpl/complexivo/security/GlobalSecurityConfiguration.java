@@ -31,8 +31,8 @@ public class GlobalSecurityConfiguration {
             "/swagger-ui/**",
             "/swagger-ui/**",
             // other public endpoints of your API may be appended to this array
-            "/puntonet-ws-activaciones-field",
-            "/puntonet-ws-field"
+            "/sugerencia",
+            "/sugerencia/**"
     };
 
     private final KeycloakJwtTokenConverter keycloakJwtTokenConverter;
