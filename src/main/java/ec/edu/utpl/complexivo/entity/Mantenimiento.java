@@ -1,9 +1,6 @@
 package ec.edu.utpl.complexivo.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -14,28 +11,29 @@ import java.util.Date;
 public class Mantenimiento {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_mantenimiento")
-    private Integer id_mantenimiento;
+    private Integer idMantenimiento;
     @Column(name = "id_personal")
-    private String id_personal;
+    private String idPersonal;
     @Column(name = "id_vehichulo")
-    private Integer id_vehichulo;
+    private Integer idVehichulo;
     @Column(name = "id_tipo_mantemiento")
-    private Integer id_tipo_mantemiento;
-    @Column(name = "km_actuall")
-    private Integer km_actuall;
+    private Integer idTipoMantemiento;
+    @Column(name = "km_actual")
+    private Integer kmActual;
     private String observaciones;
     @Column(name = "fecha_mantenimiento")
-    private Date fecha_mantenimiento;
+    private Date fechaMantenimiento;
     @Column(name = "hora_mantenimiento")
-    private Date hora_mantenimiento;
+    private Date horaMantenimiento;
     @Column(name = "proximo_kilometraje")
-    private Integer proximo_kilometraje;
+    private Integer proximoKilometraje;
     @Column(name = "usuario_entrega")
-    private String usuario_entrega;
+    private String usuarioEntrega;
     @Column(name = "usuario_retira")
-    private String usuario_retira;
+    private String usuarioRetira;
     @Column(name = "costo_total")
-    private String costo_total;
+    private String costoTotal;
 
 }
