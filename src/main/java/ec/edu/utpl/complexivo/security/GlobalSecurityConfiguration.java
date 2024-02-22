@@ -32,7 +32,10 @@ public class GlobalSecurityConfiguration {
             "/swagger-ui/**",
             // other public endpoints of your API may be appended to this array
             "/sugerencia",
-            "/sugerencia/**"
+            "/sugerencia/**",
+            "/solicitudes",
+            "/solicitudes/**",
+            "/ws/notifications/**"
     };
 
     private final KeycloakJwtTokenConverter keycloakJwtTokenConverter;
