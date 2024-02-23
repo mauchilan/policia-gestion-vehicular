@@ -24,7 +24,14 @@ public class KeycloakService {
     }
 
     public List<UserRepresentation> allUser() {
-        return keycloak.realm(REALM).users().list();
+        List<UserRepresentation> userRepresentations = new ArrayList<>();
+        keycloak.realm((REALM)).users().list().forEach(userRepresentation -> {
+            if (userRepresentation.getAttributes().get("dependencia") != null
+                    || userRepresentation.getAttributes().get("idDepencia") != null) {
+                userRepresentations.add(userRepresentation);
+            }
+        });
+        return userRepresentations;
     }
 
     public List<UserRepresentation> findByAttributes(String attributte, String value) {

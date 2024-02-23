@@ -8,6 +8,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class PertrechoServiceImpl implements PertrechoService {
 
@@ -20,7 +23,17 @@ public class PertrechoServiceImpl implements PertrechoService {
     }
 
     @Override
+    public Pertrecho getPertrechoByIdPersonal(String idPersonal) {
+        return pertrechoRepository.getPertrechoByIdPersonal(idPersonal);
+    }
+
+    @Override
     public Page<Pertrecho> getAllPertrecho(Integer page, Integer size) {
         return pertrechoRepository.findAll(PageRequest.of(page, size));
+    }
+
+    @Override
+    public List<Pertrecho> getAllPertrechoWithouAsggin() {
+        return pertrechoRepository.getAllByIdPersonalIsNull();
     }
 }

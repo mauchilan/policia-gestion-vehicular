@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pertrecho")
 public class PertrechoApi {
@@ -27,6 +29,16 @@ public class PertrechoApi {
     public ResponseEntity<Void> save(@RequestBody Pertrecho pertrecho){
         pertrechoRepository.save(pertrecho);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/noassign")
+    public ResponseEntity<List<Pertrecho>> getAllPertrechoWithouAsggin(){
+        return ResponseEntity.ok(pertrechoService.getAllPertrechoWithouAsggin());
+    }
+
+    @GetMapping("/personal/{personal}")
+    public ResponseEntity<Pertrecho> getPertrechoByIdPersonal(@PathVariable String personal){
+        return ResponseEntity.ok(pertrechoService.getPertrechoByIdPersonal(personal));
     }
 
 }
